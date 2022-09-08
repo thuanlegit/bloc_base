@@ -1,12 +1,12 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
-import 'package:bloc_base/global/assets/assets.gen.dart';
-import 'package:bloc_base/modules/settings/view/settings_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
+import '../../../global/assets/assets.gen.dart';
+import '../../login/login.dart';
 import '../splash.dart';
 
 class SplashView extends StatelessWidget {
@@ -40,7 +40,7 @@ class SplashView extends StatelessWidget {
           );
         } else if (state.status == LoadSplashStatus.loaded) {
           Navigator.of(context).pushNamedAndRemoveUntil(
-            SettingsPage.name,
+            LoginPage.name,
             (route) => false,
           );
         }
@@ -54,9 +54,12 @@ class SplashView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Assets.images.splashLogo.image(
-                    width: 56,
-                    fit: BoxFit.contain,
+                  Hero(
+                    tag: 'splash_logo',
+                    child: Assets.images.splashLogo.image(
+                      width: 56,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   const Text(
