@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'counter_bloc.dart';
+part of 'login_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CounterEvent {
+mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
@@ -34,71 +34,71 @@ mixin _$CounterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCounterEvent value) fetch,
+    required TResult Function(FetchLoginEvent value) fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchCounterEvent value)? fetch,
+    TResult Function(FetchLoginEvent value)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCounterEvent value)? fetch,
+    TResult Function(FetchLoginEvent value)? fetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CounterEventCopyWith<$Res> {
-  factory $CounterEventCopyWith(
-          CounterEvent value, $Res Function(CounterEvent) then) =
-      _$CounterEventCopyWithImpl<$Res>;
+abstract class $LoginEventCopyWith<$Res> {
+  factory $LoginEventCopyWith(
+          LoginEvent value, $Res Function(LoginEvent) then) =
+      _$LoginEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CounterEventCopyWithImpl<$Res> implements $CounterEventCopyWith<$Res> {
-  _$CounterEventCopyWithImpl(this._value, this._then);
+class _$LoginEventCopyWithImpl<$Res> implements $LoginEventCopyWith<$Res> {
+  _$LoginEventCopyWithImpl(this._value, this._then);
 
-  final CounterEvent _value;
+  final LoginEvent _value;
   // ignore: unused_field
-  final $Res Function(CounterEvent) _then;
+  final $Res Function(LoginEvent) _then;
 }
 
 /// @nodoc
-abstract class _$$FetchCounterEventCopyWith<$Res> {
-  factory _$$FetchCounterEventCopyWith(
-          _$FetchCounterEvent value, $Res Function(_$FetchCounterEvent) then) =
-      __$$FetchCounterEventCopyWithImpl<$Res>;
+abstract class _$$FetchLoginEventCopyWith<$Res> {
+  factory _$$FetchLoginEventCopyWith(
+          _$FetchLoginEvent value, $Res Function(_$FetchLoginEvent) then) =
+      __$$FetchLoginEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchCounterEventCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res>
-    implements _$$FetchCounterEventCopyWith<$Res> {
-  __$$FetchCounterEventCopyWithImpl(
-      _$FetchCounterEvent _value, $Res Function(_$FetchCounterEvent) _then)
-      : super(_value, (v) => _then(v as _$FetchCounterEvent));
+class __$$FetchLoginEventCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res>
+    implements _$$FetchLoginEventCopyWith<$Res> {
+  __$$FetchLoginEventCopyWithImpl(
+      _$FetchLoginEvent _value, $Res Function(_$FetchLoginEvent) _then)
+      : super(_value, (v) => _then(v as _$FetchLoginEvent));
 
   @override
-  _$FetchCounterEvent get _value => super._value as _$FetchCounterEvent;
+  _$FetchLoginEvent get _value => super._value as _$FetchLoginEvent;
 }
 
 /// @nodoc
 
-class _$FetchCounterEvent implements FetchCounterEvent {
-  const _$FetchCounterEvent();
+class _$FetchLoginEvent implements FetchLoginEvent {
+  const _$FetchLoginEvent();
 
   @override
   String toString() {
-    return 'CounterEvent.fetch()';
+    return 'LoginEvent.fetch()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchCounterEvent);
+        (other.runtimeType == runtimeType && other is _$FetchLoginEvent);
   }
 
   @override
@@ -135,7 +135,7 @@ class _$FetchCounterEvent implements FetchCounterEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCounterEvent value) fetch,
+    required TResult Function(FetchLoginEvent value) fetch,
   }) {
     return fetch(this);
   }
@@ -143,7 +143,7 @@ class _$FetchCounterEvent implements FetchCounterEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchCounterEvent value)? fetch,
+    TResult Function(FetchLoginEvent value)? fetch,
   }) {
     return fetch?.call(this);
   }
@@ -151,7 +151,7 @@ class _$FetchCounterEvent implements FetchCounterEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCounterEvent value)? fetch,
+    TResult Function(FetchLoginEvent value)? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -161,72 +161,72 @@ class _$FetchCounterEvent implements FetchCounterEvent {
   }
 }
 
-abstract class FetchCounterEvent implements CounterEvent {
-  const factory FetchCounterEvent() = _$FetchCounterEvent;
+abstract class FetchLoginEvent implements LoginEvent {
+  const factory FetchLoginEvent() = _$FetchLoginEvent;
 }
 
 /// @nodoc
-mixin _$CounterState {
-  LoadCounterState get status => throw _privateConstructorUsedError;
+mixin _$LoginState {
+  LoadLoginStatus get status => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(LoadCounterState status) $default, {
-    required TResult Function(LoadCounterState status) initial,
+    TResult Function(LoadLoginStatus status) $default, {
+    required TResult Function(LoadLoginStatus status) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(LoadCounterState status)? $default, {
-    TResult Function(LoadCounterState status)? initial,
+    TResult Function(LoadLoginStatus status)? $default, {
+    TResult Function(LoadLoginStatus status)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(LoadCounterState status)? $default, {
-    TResult Function(LoadCounterState status)? initial,
+    TResult Function(LoadLoginStatus status)? $default, {
+    TResult Function(LoadLoginStatus status)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CounterState value) $default, {
-    required TResult Function(InitialCounterState value) initial,
+    TResult Function(_LoginState value) $default, {
+    required TResult Function(InitialLoginState value) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CounterState value)? $default, {
-    TResult Function(InitialCounterState value)? initial,
+    TResult Function(_LoginState value)? $default, {
+    TResult Function(InitialLoginState value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CounterState value)? $default, {
-    TResult Function(InitialCounterState value)? initial,
+    TResult Function(_LoginState value)? $default, {
+    TResult Function(InitialLoginState value)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CounterStateCopyWith<CounterState> get copyWith =>
+  $LoginStateCopyWith<LoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CounterStateCopyWith<$Res> {
-  factory $CounterStateCopyWith(
-          CounterState value, $Res Function(CounterState) then) =
-      _$CounterStateCopyWithImpl<$Res>;
-  $Res call({LoadCounterState status});
+abstract class $LoginStateCopyWith<$Res> {
+  factory $LoginStateCopyWith(
+          LoginState value, $Res Function(LoginState) then) =
+      _$LoginStateCopyWithImpl<$Res>;
+  $Res call({LoadLoginStatus status});
 }
 
 /// @nodoc
-class _$CounterStateCopyWithImpl<$Res> implements $CounterStateCopyWith<$Res> {
-  _$CounterStateCopyWithImpl(this._value, this._then);
+class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
+  _$LoginStateCopyWithImpl(this._value, this._then);
 
-  final CounterState _value;
+  final LoginState _value;
   // ignore: unused_field
-  final $Res Function(CounterState) _then;
+  final $Res Function(LoginState) _then;
 
   @override
   $Res call({
@@ -236,63 +236,62 @@ class _$CounterStateCopyWithImpl<$Res> implements $CounterStateCopyWith<$Res> {
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as LoadCounterState,
+              as LoadLoginStatus,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_CounterStateCopyWith<$Res>
-    implements $CounterStateCopyWith<$Res> {
-  factory _$$_CounterStateCopyWith(
-          _$_CounterState value, $Res Function(_$_CounterState) then) =
-      __$$_CounterStateCopyWithImpl<$Res>;
+abstract class _$$_LoginStateCopyWith<$Res>
+    implements $LoginStateCopyWith<$Res> {
+  factory _$$_LoginStateCopyWith(
+          _$_LoginState value, $Res Function(_$_LoginState) then) =
+      __$$_LoginStateCopyWithImpl<$Res>;
   @override
-  $Res call({LoadCounterState status});
+  $Res call({LoadLoginStatus status});
 }
 
 /// @nodoc
-class __$$_CounterStateCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res>
-    implements _$$_CounterStateCopyWith<$Res> {
-  __$$_CounterStateCopyWithImpl(
-      _$_CounterState _value, $Res Function(_$_CounterState) _then)
-      : super(_value, (v) => _then(v as _$_CounterState));
+class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$_LoginStateCopyWith<$Res> {
+  __$$_LoginStateCopyWithImpl(
+      _$_LoginState _value, $Res Function(_$_LoginState) _then)
+      : super(_value, (v) => _then(v as _$_LoginState));
 
   @override
-  _$_CounterState get _value => super._value as _$_CounterState;
+  _$_LoginState get _value => super._value as _$_LoginState;
 
   @override
   $Res call({
     Object? status = freezed,
   }) {
-    return _then(_$_CounterState(
+    return _then(_$_LoginState(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as LoadCounterState,
+              as LoadLoginStatus,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_CounterState implements _CounterState {
-  const _$_CounterState({required this.status});
+class _$_LoginState implements _LoginState {
+  const _$_LoginState({required this.status});
 
   @override
-  final LoadCounterState status;
+  final LoadLoginStatus status;
 
   @override
   String toString() {
-    return 'CounterState(status: $status)';
+    return 'LoginState(status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CounterState &&
+            other is _$_LoginState &&
             const DeepCollectionEquality().equals(other.status, status));
   }
 
@@ -302,14 +301,14 @@ class _$_CounterState implements _CounterState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_CounterStateCopyWith<_$_CounterState> get copyWith =>
-      __$$_CounterStateCopyWithImpl<_$_CounterState>(this, _$identity);
+  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
+      __$$_LoginStateCopyWithImpl<_$_LoginState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(LoadCounterState status) $default, {
-    required TResult Function(LoadCounterState status) initial,
+    TResult Function(LoadLoginStatus status) $default, {
+    required TResult Function(LoadLoginStatus status) initial,
   }) {
     return $default(status);
   }
@@ -317,8 +316,8 @@ class _$_CounterState implements _CounterState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(LoadCounterState status)? $default, {
-    TResult Function(LoadCounterState status)? initial,
+    TResult Function(LoadLoginStatus status)? $default, {
+    TResult Function(LoadLoginStatus status)? initial,
   }) {
     return $default?.call(status);
   }
@@ -326,8 +325,8 @@ class _$_CounterState implements _CounterState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(LoadCounterState status)? $default, {
-    TResult Function(LoadCounterState status)? initial,
+    TResult Function(LoadLoginStatus status)? $default, {
+    TResult Function(LoadLoginStatus status)? initial,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -339,8 +338,8 @@ class _$_CounterState implements _CounterState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CounterState value) $default, {
-    required TResult Function(InitialCounterState value) initial,
+    TResult Function(_LoginState value) $default, {
+    required TResult Function(InitialLoginState value) initial,
   }) {
     return $default(this);
   }
@@ -348,8 +347,8 @@ class _$_CounterState implements _CounterState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CounterState value)? $default, {
-    TResult Function(InitialCounterState value)? initial,
+    TResult Function(_LoginState value)? $default, {
+    TResult Function(InitialLoginState value)? initial,
   }) {
     return $default?.call(this);
   }
@@ -357,8 +356,8 @@ class _$_CounterState implements _CounterState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CounterState value)? $default, {
-    TResult Function(InitialCounterState value)? initial,
+    TResult Function(_LoginState value)? $default, {
+    TResult Function(InitialLoginState value)? initial,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -368,71 +367,71 @@ class _$_CounterState implements _CounterState {
   }
 }
 
-abstract class _CounterState implements CounterState {
-  const factory _CounterState({required final LoadCounterState status}) =
-      _$_CounterState;
+abstract class _LoginState implements LoginState {
+  const factory _LoginState({required final LoadLoginStatus status}) =
+      _$_LoginState;
 
   @override
-  LoadCounterState get status;
+  LoadLoginStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_CounterStateCopyWith<_$_CounterState> get copyWith =>
+  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InitialCounterStateCopyWith<$Res>
-    implements $CounterStateCopyWith<$Res> {
-  factory _$$InitialCounterStateCopyWith(_$InitialCounterState value,
-          $Res Function(_$InitialCounterState) then) =
-      __$$InitialCounterStateCopyWithImpl<$Res>;
+abstract class _$$InitialLoginStateCopyWith<$Res>
+    implements $LoginStateCopyWith<$Res> {
+  factory _$$InitialLoginStateCopyWith(
+          _$InitialLoginState value, $Res Function(_$InitialLoginState) then) =
+      __$$InitialLoginStateCopyWithImpl<$Res>;
   @override
-  $Res call({LoadCounterState status});
+  $Res call({LoadLoginStatus status});
 }
 
 /// @nodoc
-class __$$InitialCounterStateCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res>
-    implements _$$InitialCounterStateCopyWith<$Res> {
-  __$$InitialCounterStateCopyWithImpl(
-      _$InitialCounterState _value, $Res Function(_$InitialCounterState) _then)
-      : super(_value, (v) => _then(v as _$InitialCounterState));
+class __$$InitialLoginStateCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$InitialLoginStateCopyWith<$Res> {
+  __$$InitialLoginStateCopyWithImpl(
+      _$InitialLoginState _value, $Res Function(_$InitialLoginState) _then)
+      : super(_value, (v) => _then(v as _$InitialLoginState));
 
   @override
-  _$InitialCounterState get _value => super._value as _$InitialCounterState;
+  _$InitialLoginState get _value => super._value as _$InitialLoginState;
 
   @override
   $Res call({
     Object? status = freezed,
   }) {
-    return _then(_$InitialCounterState(
+    return _then(_$InitialLoginState(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as LoadCounterState,
+              as LoadLoginStatus,
     ));
   }
 }
 
 /// @nodoc
 
-class _$InitialCounterState implements InitialCounterState {
-  const _$InitialCounterState({this.status = LoadCounterState.initial});
+class _$InitialLoginState implements InitialLoginState {
+  const _$InitialLoginState({this.status = LoadLoginStatus.initial});
 
   @override
   @JsonKey()
-  final LoadCounterState status;
+  final LoadLoginStatus status;
 
   @override
   String toString() {
-    return 'CounterState.initial(status: $status)';
+    return 'LoginState.initial(status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialCounterState &&
+            other is _$InitialLoginState &&
             const DeepCollectionEquality().equals(other.status, status));
   }
 
@@ -442,15 +441,14 @@ class _$InitialCounterState implements InitialCounterState {
 
   @JsonKey(ignore: true)
   @override
-  _$$InitialCounterStateCopyWith<_$InitialCounterState> get copyWith =>
-      __$$InitialCounterStateCopyWithImpl<_$InitialCounterState>(
-          this, _$identity);
+  _$$InitialLoginStateCopyWith<_$InitialLoginState> get copyWith =>
+      __$$InitialLoginStateCopyWithImpl<_$InitialLoginState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(LoadCounterState status) $default, {
-    required TResult Function(LoadCounterState status) initial,
+    TResult Function(LoadLoginStatus status) $default, {
+    required TResult Function(LoadLoginStatus status) initial,
   }) {
     return initial(status);
   }
@@ -458,8 +456,8 @@ class _$InitialCounterState implements InitialCounterState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(LoadCounterState status)? $default, {
-    TResult Function(LoadCounterState status)? initial,
+    TResult Function(LoadLoginStatus status)? $default, {
+    TResult Function(LoadLoginStatus status)? initial,
   }) {
     return initial?.call(status);
   }
@@ -467,8 +465,8 @@ class _$InitialCounterState implements InitialCounterState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(LoadCounterState status)? $default, {
-    TResult Function(LoadCounterState status)? initial,
+    TResult Function(LoadLoginStatus status)? $default, {
+    TResult Function(LoadLoginStatus status)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -480,8 +478,8 @@ class _$InitialCounterState implements InitialCounterState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CounterState value) $default, {
-    required TResult Function(InitialCounterState value) initial,
+    TResult Function(_LoginState value) $default, {
+    required TResult Function(InitialLoginState value) initial,
   }) {
     return initial(this);
   }
@@ -489,8 +487,8 @@ class _$InitialCounterState implements InitialCounterState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CounterState value)? $default, {
-    TResult Function(InitialCounterState value)? initial,
+    TResult Function(_LoginState value)? $default, {
+    TResult Function(InitialLoginState value)? initial,
   }) {
     return initial?.call(this);
   }
@@ -498,8 +496,8 @@ class _$InitialCounterState implements InitialCounterState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CounterState value)? $default, {
-    TResult Function(InitialCounterState value)? initial,
+    TResult Function(_LoginState value)? $default, {
+    TResult Function(InitialLoginState value)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -509,14 +507,14 @@ class _$InitialCounterState implements InitialCounterState {
   }
 }
 
-abstract class InitialCounterState implements CounterState {
-  const factory InitialCounterState({final LoadCounterState status}) =
-      _$InitialCounterState;
+abstract class InitialLoginState implements LoginState {
+  const factory InitialLoginState({final LoadLoginStatus status}) =
+      _$InitialLoginState;
 
   @override
-  LoadCounterState get status;
+  LoadLoginStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$InitialCounterStateCopyWith<_$InitialCounterState> get copyWith =>
+  _$$InitialLoginStateCopyWith<_$InitialLoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }

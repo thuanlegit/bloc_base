@@ -1,9 +1,10 @@
-import 'package:bloc_base/locator.dart';
-import 'package:bloc_base/modules/counter/counter.dart';
-import 'package:bloc_base/modules/settings/settings.dart';
-import 'package:bloc_base/modules/splash/splash.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import 'locator.dart';
+import 'modules/login/login.dart';
+import 'modules/settings/settings.dart';
+import 'modules/splash/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashPage.name: (context) => const SplashPage(),
         SettingsPage.name: (context) => const SettingsPage(),
-        CounterPage.name: (context) => const CounterPage(),
+        LoginPage.name: (context) => const LoginPage(),
       },
     );
   }

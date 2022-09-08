@@ -2,32 +2,32 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../counter.dart';
-import 'counter_view.dart';
+import '../login.dart';
+import 'login_view.dart';
 
-class CounterPage extends StatelessWidget {
-  static const String name = '/counter';
+class LoginPage extends StatelessWidget {
+  static const String name = '/login';
 
   static Route<void> route() {
     return MaterialPageRoute(
       builder: (ctx) {
         return BlocProvider(
-          create: (context) => CounterBloc(),
-          child: const CounterView(),
+          create: (context) => LoginBloc(),
+          child: const LoginView(),
         );
       },
     );
   }
 
-  const CounterPage({
+  const LoginPage({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CounterBloc(),
-      child: const CounterView(),
+      create: (context) => LoginBloc(),
+      child: const LoginView(),
     );
   }
 }

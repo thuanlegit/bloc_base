@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../counter.dart';
+import '../login.dart';
 
-class CounterView extends StatelessWidget {
-  const CounterView({
+class LoginView extends StatelessWidget {
+  const LoginView({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<CounterBloc>();
+    final bloc = context.read<LoginBloc>();
     return Container(
       child: null,
     );
