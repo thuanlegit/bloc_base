@@ -6,7 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../locator.dart';
 import '../../models/app_locale.dart';
-import '../../repositories/app_config_repository.dart';
+import '../../repositories/hive_repository.dart';
 
 part 'app_config_bloc.freezed.dart';
 part 'app_config_event.dart';
@@ -26,7 +26,7 @@ class AppConfigBloc extends Bloc<AppConfigEvent, AppConfigState> {
     on<ResetAppConfigEvent>(_onAppConfigReset);
   }
 
-  final _appConfigRepository = locator.get<AppConfigRepository>();
+  final _appConfigRepository = locator.get<HiveRepository>();
 
   Future<void> _onAppConfigFetch(
       FetchAppConfigEvent event, Emitter<AppConfigState> emit) async {
@@ -54,7 +54,7 @@ class AppConfigBloc extends Bloc<AppConfigEvent, AppConfigState> {
 
   Future<void> _onAppConfigReset(
       ResetAppConfigEvent event, Emitter<AppConfigState> emit) async {
-    await _appConfigRepository.reset();
+    await _appConfigRepository.resetAppConfig();
     emit(
       AppConfigState(
         theme: AppThemes.light(),

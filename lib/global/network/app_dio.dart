@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../../locator.dart';
-import '../repositories/auth_repository.dart';
+import '../repositories/hive_repository.dart';
 import '../utils/constants.dart';
 import 'dio_adapter_mock.dart';
 
@@ -15,14 +15,10 @@ abstract class AppDio {
 }
 
 class AppDioImpl extends AppDio {
-  static final _authRepository = locator.get<AuthRepository>();
+  final _hiveRepository = locator.get<HiveRepository>();
 
   AppDioImpl() {
-    dio = _createDio();
-  }
-
-  Dio _createDio() {
-    var dio = Dio(
+    dio = Dio(
       BaseOptions(
         baseUrl: Constants.baseURL,
         receiveTimeout: 30000,
@@ -31,7 +27,7 @@ class AppDioImpl extends AppDio {
         receiveDataWhenStatusError: true,
         headers: <String, String>{
           'Authorization':
-              'Bearer ${_authRepository.getSavedUserData()?.accessToken}',
+              'Bearer ${_hiveRepository.getSavedUserData()?.accessToken}',
           'Content-Type': 'application/json'
         },
       ),
@@ -52,8 +48,6 @@ class AppDioImpl extends AppDio {
     if (Platform.environment.containsKey('FLUTTER_TEST')) {
       dio.httpClientAdapter = DioAdapterMock();
     }
-
-    return dio;
   }
 
   @override

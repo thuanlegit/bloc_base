@@ -18,33 +18,42 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
+    required TResult Function(String username, String password) request,
+    required TResult Function() togglePasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function(String username, String password)? request,
+    TResult Function()? togglePasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function(String username, String password)? request,
+    TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchLoginEvent value) fetch,
+    required TResult Function(RequestLoginEvent value) request,
+    required TResult Function(TogglePasswordVisibilityLoginEvent value)
+        togglePasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchLoginEvent value)? fetch,
+    TResult Function(RequestLoginEvent value)? request,
+    TResult Function(TogglePasswordVisibilityLoginEvent value)?
+        togglePasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchLoginEvent value)? fetch,
+    TResult Function(RequestLoginEvent value)? request,
+    TResult Function(TogglePasswordVisibilityLoginEvent value)?
+        togglePasswordVisibility,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,38 +76,193 @@ class _$LoginEventCopyWithImpl<$Res> implements $LoginEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$FetchLoginEventCopyWith<$Res> {
-  factory _$$FetchLoginEventCopyWith(
-          _$FetchLoginEvent value, $Res Function(_$FetchLoginEvent) then) =
-      __$$FetchLoginEventCopyWithImpl<$Res>;
+abstract class _$$RequestLoginEventCopyWith<$Res> {
+  factory _$$RequestLoginEventCopyWith(
+          _$RequestLoginEvent value, $Res Function(_$RequestLoginEvent) then) =
+      __$$RequestLoginEventCopyWithImpl<$Res>;
+  $Res call({String username, String password});
 }
 
 /// @nodoc
-class __$$FetchLoginEventCopyWithImpl<$Res>
+class __$$RequestLoginEventCopyWithImpl<$Res>
     extends _$LoginEventCopyWithImpl<$Res>
-    implements _$$FetchLoginEventCopyWith<$Res> {
-  __$$FetchLoginEventCopyWithImpl(
-      _$FetchLoginEvent _value, $Res Function(_$FetchLoginEvent) _then)
-      : super(_value, (v) => _then(v as _$FetchLoginEvent));
+    implements _$$RequestLoginEventCopyWith<$Res> {
+  __$$RequestLoginEventCopyWithImpl(
+      _$RequestLoginEvent _value, $Res Function(_$RequestLoginEvent) _then)
+      : super(_value, (v) => _then(v as _$RequestLoginEvent));
 
   @override
-  _$FetchLoginEvent get _value => super._value as _$FetchLoginEvent;
+  _$RequestLoginEvent get _value => super._value as _$RequestLoginEvent;
+
+  @override
+  $Res call({
+    Object? username = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_$RequestLoginEvent(
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$FetchLoginEvent implements FetchLoginEvent {
-  const _$FetchLoginEvent();
+class _$RequestLoginEvent implements RequestLoginEvent {
+  const _$RequestLoginEvent({required this.username, required this.password});
+
+  @override
+  final String username;
+  @override
+  final String password;
 
   @override
   String toString() {
-    return 'LoginEvent.fetch()';
+    return 'LoginEvent.request(username: $username, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchLoginEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$RequestLoginEvent &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.password, password));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$RequestLoginEventCopyWith<_$RequestLoginEvent> get copyWith =>
+      __$$RequestLoginEventCopyWithImpl<_$RequestLoginEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String username, String password) request,
+    required TResult Function() togglePasswordVisibility,
+  }) {
+    return request(username, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String username, String password)? request,
+    TResult Function()? togglePasswordVisibility,
+  }) {
+    return request?.call(username, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String username, String password)? request,
+    TResult Function()? togglePasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (request != null) {
+      return request(username, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RequestLoginEvent value) request,
+    required TResult Function(TogglePasswordVisibilityLoginEvent value)
+        togglePasswordVisibility,
+  }) {
+    return request(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RequestLoginEvent value)? request,
+    TResult Function(TogglePasswordVisibilityLoginEvent value)?
+        togglePasswordVisibility,
+  }) {
+    return request?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RequestLoginEvent value)? request,
+    TResult Function(TogglePasswordVisibilityLoginEvent value)?
+        togglePasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (request != null) {
+      return request(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestLoginEvent implements LoginEvent {
+  const factory RequestLoginEvent(
+      {required final String username,
+      required final String password}) = _$RequestLoginEvent;
+
+  String get username;
+  String get password;
+  @JsonKey(ignore: true)
+  _$$RequestLoginEventCopyWith<_$RequestLoginEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TogglePasswordVisibilityLoginEventCopyWith<$Res> {
+  factory _$$TogglePasswordVisibilityLoginEventCopyWith(
+          _$TogglePasswordVisibilityLoginEvent value,
+          $Res Function(_$TogglePasswordVisibilityLoginEvent) then) =
+      __$$TogglePasswordVisibilityLoginEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TogglePasswordVisibilityLoginEventCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res>
+    implements _$$TogglePasswordVisibilityLoginEventCopyWith<$Res> {
+  __$$TogglePasswordVisibilityLoginEventCopyWithImpl(
+      _$TogglePasswordVisibilityLoginEvent _value,
+      $Res Function(_$TogglePasswordVisibilityLoginEvent) _then)
+      : super(_value, (v) => _then(v as _$TogglePasswordVisibilityLoginEvent));
+
+  @override
+  _$TogglePasswordVisibilityLoginEvent get _value =>
+      super._value as _$TogglePasswordVisibilityLoginEvent;
+}
+
+/// @nodoc
+
+class _$TogglePasswordVisibilityLoginEvent
+    implements TogglePasswordVisibilityLoginEvent {
+  const _$TogglePasswordVisibilityLoginEvent();
+
+  @override
+  String toString() {
+    return 'LoginEvent.togglePasswordVisibility()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TogglePasswordVisibilityLoginEvent);
   }
 
   @override
@@ -107,27 +271,30 @@ class _$FetchLoginEvent implements FetchLoginEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
+    required TResult Function(String username, String password) request,
+    required TResult Function() togglePasswordVisibility,
   }) {
-    return fetch();
+    return togglePasswordVisibility();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function(String username, String password)? request,
+    TResult Function()? togglePasswordVisibility,
   }) {
-    return fetch?.call();
+    return togglePasswordVisibility?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function(String username, String password)? request,
+    TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch();
+    if (togglePasswordVisibility != null) {
+      return togglePasswordVisibility();
     }
     return orElse();
   }
@@ -135,55 +302,63 @@ class _$FetchLoginEvent implements FetchLoginEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchLoginEvent value) fetch,
+    required TResult Function(RequestLoginEvent value) request,
+    required TResult Function(TogglePasswordVisibilityLoginEvent value)
+        togglePasswordVisibility,
   }) {
-    return fetch(this);
+    return togglePasswordVisibility(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchLoginEvent value)? fetch,
+    TResult Function(RequestLoginEvent value)? request,
+    TResult Function(TogglePasswordVisibilityLoginEvent value)?
+        togglePasswordVisibility,
   }) {
-    return fetch?.call(this);
+    return togglePasswordVisibility?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchLoginEvent value)? fetch,
+    TResult Function(RequestLoginEvent value)? request,
+    TResult Function(TogglePasswordVisibilityLoginEvent value)?
+        togglePasswordVisibility,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch(this);
+    if (togglePasswordVisibility != null) {
+      return togglePasswordVisibility(this);
     }
     return orElse();
   }
 }
 
-abstract class FetchLoginEvent implements LoginEvent {
-  const factory FetchLoginEvent() = _$FetchLoginEvent;
+abstract class TogglePasswordVisibilityLoginEvent implements LoginEvent {
+  const factory TogglePasswordVisibilityLoginEvent() =
+      _$TogglePasswordVisibilityLoginEvent;
 }
 
 /// @nodoc
 mixin _$LoginState {
   LoadLoginStatus get status => throw _privateConstructorUsedError;
+  bool get obscure => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status) $default, {
-    required TResult Function(LoadLoginStatus status) initial,
+    TResult Function(LoadLoginStatus status, bool obscure) $default, {
+    required TResult Function(LoadLoginStatus status, bool obscure) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status)? $default, {
-    TResult Function(LoadLoginStatus status)? initial,
+    TResult Function(LoadLoginStatus status, bool obscure)? $default, {
+    TResult Function(LoadLoginStatus status, bool obscure)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status)? $default, {
-    TResult Function(LoadLoginStatus status)? initial,
+    TResult Function(LoadLoginStatus status, bool obscure)? $default, {
+    TResult Function(LoadLoginStatus status, bool obscure)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -217,7 +392,7 @@ abstract class $LoginStateCopyWith<$Res> {
   factory $LoginStateCopyWith(
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res>;
-  $Res call({LoadLoginStatus status});
+  $Res call({LoadLoginStatus status, bool obscure});
 }
 
 /// @nodoc
@@ -231,12 +406,17 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
   @override
   $Res call({
     Object? status = freezed,
+    Object? obscure = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoadLoginStatus,
+      obscure: obscure == freezed
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -248,7 +428,7 @@ abstract class _$$_LoginStateCopyWith<$Res>
           _$_LoginState value, $Res Function(_$_LoginState) then) =
       __$$_LoginStateCopyWithImpl<$Res>;
   @override
-  $Res call({LoadLoginStatus status});
+  $Res call({LoadLoginStatus status, bool obscure});
 }
 
 /// @nodoc
@@ -264,12 +444,17 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
+    Object? obscure = freezed,
   }) {
     return _then(_$_LoginState(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoadLoginStatus,
+      obscure: obscure == freezed
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -277,14 +462,16 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoginState implements _LoginState {
-  const _$_LoginState({required this.status});
+  const _$_LoginState({required this.status, required this.obscure});
 
   @override
   final LoadLoginStatus status;
+  @override
+  final bool obscure;
 
   @override
   String toString() {
-    return 'LoginState(status: $status)';
+    return 'LoginState(status: $status, obscure: $obscure)';
   }
 
   @override
@@ -292,12 +479,15 @@ class _$_LoginState implements _LoginState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoginState &&
-            const DeepCollectionEquality().equals(other.status, status));
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.obscure, obscure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(obscure));
 
   @JsonKey(ignore: true)
   @override
@@ -307,30 +497,30 @@ class _$_LoginState implements _LoginState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status) $default, {
-    required TResult Function(LoadLoginStatus status) initial,
+    TResult Function(LoadLoginStatus status, bool obscure) $default, {
+    required TResult Function(LoadLoginStatus status, bool obscure) initial,
   }) {
-    return $default(status);
+    return $default(status, obscure);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status)? $default, {
-    TResult Function(LoadLoginStatus status)? initial,
+    TResult Function(LoadLoginStatus status, bool obscure)? $default, {
+    TResult Function(LoadLoginStatus status, bool obscure)? initial,
   }) {
-    return $default?.call(status);
+    return $default?.call(status, obscure);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status)? $default, {
-    TResult Function(LoadLoginStatus status)? initial,
+    TResult Function(LoadLoginStatus status, bool obscure)? $default, {
+    TResult Function(LoadLoginStatus status, bool obscure)? initial,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(status);
+      return $default(status, obscure);
     }
     return orElse();
   }
@@ -368,11 +558,14 @@ class _$_LoginState implements _LoginState {
 }
 
 abstract class _LoginState implements LoginState {
-  const factory _LoginState({required final LoadLoginStatus status}) =
-      _$_LoginState;
+  const factory _LoginState(
+      {required final LoadLoginStatus status,
+      required final bool obscure}) = _$_LoginState;
 
   @override
   LoadLoginStatus get status;
+  @override
+  bool get obscure;
   @override
   @JsonKey(ignore: true)
   _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
@@ -386,7 +579,7 @@ abstract class _$$InitialLoginStateCopyWith<$Res>
           _$InitialLoginState value, $Res Function(_$InitialLoginState) then) =
       __$$InitialLoginStateCopyWithImpl<$Res>;
   @override
-  $Res call({LoadLoginStatus status});
+  $Res call({LoadLoginStatus status, bool obscure});
 }
 
 /// @nodoc
@@ -403,12 +596,17 @@ class __$$InitialLoginStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
+    Object? obscure = freezed,
   }) {
     return _then(_$InitialLoginState(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoadLoginStatus,
+      obscure: obscure == freezed
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -416,15 +614,19 @@ class __$$InitialLoginStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialLoginState implements InitialLoginState {
-  const _$InitialLoginState({this.status = LoadLoginStatus.initial});
+  const _$InitialLoginState(
+      {this.status = LoadLoginStatus.initial, this.obscure = true});
 
   @override
   @JsonKey()
   final LoadLoginStatus status;
+  @override
+  @JsonKey()
+  final bool obscure;
 
   @override
   String toString() {
-    return 'LoginState.initial(status: $status)';
+    return 'LoginState.initial(status: $status, obscure: $obscure)';
   }
 
   @override
@@ -432,12 +634,15 @@ class _$InitialLoginState implements InitialLoginState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialLoginState &&
-            const DeepCollectionEquality().equals(other.status, status));
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.obscure, obscure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(obscure));
 
   @JsonKey(ignore: true)
   @override
@@ -447,30 +652,30 @@ class _$InitialLoginState implements InitialLoginState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status) $default, {
-    required TResult Function(LoadLoginStatus status) initial,
+    TResult Function(LoadLoginStatus status, bool obscure) $default, {
+    required TResult Function(LoadLoginStatus status, bool obscure) initial,
   }) {
-    return initial(status);
+    return initial(status, obscure);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status)? $default, {
-    TResult Function(LoadLoginStatus status)? initial,
+    TResult Function(LoadLoginStatus status, bool obscure)? $default, {
+    TResult Function(LoadLoginStatus status, bool obscure)? initial,
   }) {
-    return initial?.call(status);
+    return initial?.call(status, obscure);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(LoadLoginStatus status)? $default, {
-    TResult Function(LoadLoginStatus status)? initial,
+    TResult Function(LoadLoginStatus status, bool obscure)? $default, {
+    TResult Function(LoadLoginStatus status, bool obscure)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(status);
+      return initial(status, obscure);
     }
     return orElse();
   }
@@ -508,11 +713,13 @@ class _$InitialLoginState implements InitialLoginState {
 }
 
 abstract class InitialLoginState implements LoginState {
-  const factory InitialLoginState({final LoadLoginStatus status}) =
-      _$InitialLoginState;
+  const factory InitialLoginState(
+      {final LoadLoginStatus status, final bool obscure}) = _$InitialLoginState;
 
   @override
   LoadLoginStatus get status;
+  @override
+  bool get obscure;
   @override
   @JsonKey(ignore: true)
   _$$InitialLoginStateCopyWith<_$InitialLoginState> get copyWith =>

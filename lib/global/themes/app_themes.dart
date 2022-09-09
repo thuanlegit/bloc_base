@@ -17,30 +17,37 @@ class AppThemes {
       errorColor: AppColors.red,
       dividerColor: Colors.transparent,
       appBarTheme: theme.appBarTheme.copyWith(
-          color: AppColors.white,
-          iconTheme: const IconThemeData(color: AppColors.black),
-          toolbarTextStyle: theme.textTheme
-              .copyWith(
-                caption: GoogleFonts.lato(
-                  textStyle: const TextStyle(
-                    color: AppColors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+        color: AppColors.white,
+        iconTheme: const IconThemeData(color: AppColors.black),
+        toolbarTextStyle: theme.textTheme
+            .copyWith(
+              caption: GoogleFonts.lato(
+                textStyle: const TextStyle(
+                  color: AppColors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                 ),
-              )
-              .bodyText2,
-          titleTextStyle: theme.textTheme
-              .copyWith(
-                caption: GoogleFonts.lato(
-                  textStyle: const TextStyle(
-                    color: AppColors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+              ),
+            )
+            .bodyText2,
+        titleTextStyle: theme.textTheme
+            .copyWith(
+              caption: GoogleFonts.lato(
+                textStyle: const TextStyle(
+                  color: AppColors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                 ),
-              )
-              .headline6),
+              ),
+            )
+            .headline6,
+      ),
+      checkboxTheme: theme.checkboxTheme.copyWith(
+        checkColor: MaterialStateProperty.all<Color>(AppColors.white),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
       textTheme: GoogleFonts.latoTextTheme(
         theme.textTheme.copyWith(
           displayLarge: theme.textTheme.displayLarge
@@ -91,30 +98,37 @@ class AppThemes {
       errorColor: AppColors.red,
       dividerColor: Colors.transparent,
       appBarTheme: theme.appBarTheme.copyWith(
-          color: AppColors.white,
-          iconTheme: const IconThemeData(color: AppColors.white),
-          toolbarTextStyle: theme.textTheme
-              .copyWith(
-                caption: GoogleFonts.lato(
-                  textStyle: const TextStyle(
-                    color: AppColors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+        color: AppColors.white,
+        iconTheme: const IconThemeData(color: AppColors.white),
+        toolbarTextStyle: theme.textTheme
+            .copyWith(
+              caption: GoogleFonts.lato(
+                textStyle: const TextStyle(
+                  color: AppColors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                 ),
-              )
-              .bodyText2,
-          titleTextStyle: theme.textTheme
-              .copyWith(
-                caption: GoogleFonts.lato(
-                  textStyle: const TextStyle(
-                    color: AppColors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+              ),
+            )
+            .bodyText2,
+        titleTextStyle: theme.textTheme
+            .copyWith(
+              caption: GoogleFonts.lato(
+                textStyle: const TextStyle(
+                  color: AppColors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                 ),
-              )
-              .headline6),
+              ),
+            )
+            .headline6,
+      ),
+      checkboxTheme: theme.checkboxTheme.copyWith(
+        checkColor: MaterialStateProperty.all<Color>(AppColors.white),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
       textTheme: GoogleFonts.latoTextTheme(
         theme.textTheme.copyWith(
           displayLarge:

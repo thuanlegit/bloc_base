@@ -1,4 +1,3 @@
-import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -25,16 +24,10 @@ class SplashView extends StatelessWidget {
       listener: (context, state) {
         if (state.status == LoadSplashStatus.error) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              padding: const EdgeInsets.fromLTRB(15, 20, 15, 5),
-              elevation: 0,
-              behavior: SnackBarBehavior.fixed,
-              backgroundColor: Colors.transparent,
-              content: AwesomeSnackbarContent(
-                title: 'On Snap!',
-                message:
-                    'Could not load startup data. Please restart the app and try again!',
-                contentType: ContentType.failure,
+            const SnackBar(
+              behavior: SnackBarBehavior.floating,
+              content: Text(
+                'Could not load startup data. Please restart the app and try again!',
               ),
             ),
           );
@@ -47,7 +40,6 @@ class SplashView extends StatelessWidget {
       },
       buildWhen: (previous, current) => current.status != previous.status,
       builder: (context, state) => Scaffold(
-        backgroundColor: const Color(0xFFFDEFE0),
         body: Stack(
           children: [
             Center(

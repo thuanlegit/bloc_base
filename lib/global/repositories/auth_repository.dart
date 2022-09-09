@@ -8,7 +8,6 @@ import '../sources/hive_data_source.dart';
 abstract class AuthRepository {
   Future<ResponseLogin> login(String username, String password);
   Future<void> logout();
-  UserDataModel? getSavedUserData();
 }
 
 class AuthRepositoryImpl extends AuthRepository {
@@ -30,10 +29,5 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   Future<void> logout() async {
     await _hiveDataSource.clearUserData();
-  }
-
-  @override
-  UserDataModel? getSavedUserData() {
-    return _hiveDataSource.loadUserData();
   }
 }

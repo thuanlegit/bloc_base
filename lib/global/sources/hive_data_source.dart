@@ -39,7 +39,7 @@ class HiveDataSourceImpl extends HiveDataSource {
 
   @override
   Future<void> saveUserData(UserDataModel userData) async {
-    final savedData = _userDataBox.getAt(0) as UserDataModel?;
+    final savedData = loadUserData();
     if (savedData == null) {
       await _userDataBox.add(userData);
     } else {
@@ -52,7 +52,12 @@ class HiveDataSourceImpl extends HiveDataSource {
 
   @override
   UserDataModel? loadUserData() {
-    return _userDataBox.getAt(0) as UserDataModel?;
+    try {
+      final savedUserData = _userDataBox.getAt(0) as UserDataModel?;
+      return savedUserData;
+    } catch (_) {
+      return null;
+    }
   }
 
   @override
