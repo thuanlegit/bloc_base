@@ -1,6 +1,6 @@
-import 'package:bloc_base/global/models/user_data_model.dart';
 import 'package:hive/hive.dart';
 
+import '../models/hive/user_data_model.dart';
 import '../utils/constants.dart';
 
 abstract class HiveDataSource {

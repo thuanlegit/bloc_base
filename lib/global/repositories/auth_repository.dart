@@ -1,7 +1,6 @@
-import 'package:bloc_base/global/models/user_data_model.dart';
-
 import '../../locator.dart';
 import '../models/auth/response_login.dart';
+import '../models/hive/user_data_model.dart';
 import '../sources/auth_data_source.dart';
 import '../sources/hive_data_source.dart';
 

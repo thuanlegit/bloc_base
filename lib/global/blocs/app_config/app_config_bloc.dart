@@ -1,12 +1,12 @@
-import 'package:bloc_base/global/models/app_theme.dart';
-import 'package:bloc_base/global/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../locator.dart';
 import '../../models/app_locale.dart';
+import '../../models/app_theme.dart';
 import '../../repositories/hive_repository.dart';
+import '../../themes/app_themes.dart';
 
 part 'app_config_bloc.freezed.dart';
 part 'app_config_event.dart';

@@ -1,20 +1,22 @@
-import 'package:bloc_base/global/network/app_dio.dart';
-import 'package:bloc_base/global/utils/constants.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'global/models/hive/user_data_model.dart';
+import 'global/network/app_dio.dart';
 import 'global/repositories/hive_repository.dart';
 import 'global/repositories/auth_repository.dart';
 import 'global/sources/auth_data_source.dart';
 import 'global/sources/hive_data_source.dart';
+import 'global/utils/constants.dart';
 
 GetIt locator = GetIt.instance;
 
 Future<void> setupLocator() async {
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
-  // Hive..init(appDocumentDirectory.path)..registerAdapter(UserDataAdapter);
-  Hive.init(appDocumentDirectory.path);
+  Hive
+    ..initFlutter(appDocumentDirectory.path)
+    ..registerAdapter<UserDataModel>(UserDataModelAdapter());
   await Hive.openBox(Constants.hiveAppConfigBoxName);
   await Hive.openBox(Constants.hiveUserDataBoxName);
 

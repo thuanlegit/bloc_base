@@ -1,5 +1,7 @@
 import 'package:hive/hive.dart';
 
+part 'user_data_model.g.dart';
+
 @HiveType(typeId: 0)
 class UserDataModel extends HiveObject {
   @HiveField(0)

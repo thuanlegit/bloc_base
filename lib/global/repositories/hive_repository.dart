@@ -1,7 +1,7 @@
 import '../../locator.dart';
 import '../models/app_locale.dart';
 import '../models/app_theme.dart';
-import '../models/user_data_model.dart';
+import '../models/hive/user_data_model.dart';
 import '../sources/hive_data_source.dart';
 import '../utils/constants.dart';
 
