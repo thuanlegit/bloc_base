@@ -1,10 +1,10 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../global/assets/assets.gen.dart';
+import '../../../global/assets/i18n.dart';
 import '../../login/login.dart';
 import '../splash.dart';
 
@@ -54,13 +54,13 @@ class SplashView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    'appTitle',
-                    style: TextStyle(
+                  Text(
+                    I18n.of(context)!.appTitle,
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
-                  ).tr(),
+                  ),
                 ],
               ),
             ),

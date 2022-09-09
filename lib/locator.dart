@@ -14,9 +14,8 @@ GetIt locator = GetIt.instance;
 
 Future<void> setupLocator() async {
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
-  Hive
-    ..initFlutter(appDocumentDirectory.path)
-    ..registerAdapter<UserDataModel>(UserDataModelAdapter());
+  await Hive.initFlutter(appDocumentDirectory.path);
+  Hive.registerAdapter<UserDataModel>(UserDataModelAdapter());
   await Hive.openBox(Constants.hiveAppConfigBoxName);
   await Hive.openBox(Constants.hiveUserDataBoxName);
 

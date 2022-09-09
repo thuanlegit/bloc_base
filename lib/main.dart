@@ -1,7 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'global/assets/i18n.dart';
 import 'global/blocs/app_config/app_config_bloc.dart';
 import 'locator.dart';
 import 'modules/login/login.dart';
@@ -10,21 +11,15 @@ import 'modules/splash/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
   await setupLocator();
 
   runApp(
-    EasyLocalization(
-      supportedLocales: const [
-        Locale('vi', 'VN'),
-        Locale('en', 'US'),
-      ],
-      path: 'assets/locales',
-      fallbackLocale: const Locale('en', 'US'),
-      child: BlocProvider(
-        create: (context) => AppConfigBloc()..add(const FetchAppConfigEvent()),
-        child: const MyApp(),
-      ),
+    BlocProvider(
+      create: (context) => AppConfigBloc()
+        ..add(
+          const FetchAppConfigEvent(),
+        ),
+      child: const MyApp(),
     ),
   );
 }
@@ -40,13 +35,21 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppConfigBloc, AppConfigState>(
-      buildWhen: (previous, current) => current.theme != previous.theme,
+      buildWhen: (previous, current) => current != previous,
       builder: (context, state) {
         return MaterialApp(
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          title: 'appTitle'.tr(),
+          localizationsDelegates: const [
+            I18n.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: I18n.delegate.supportedLocales,
+          locale: state.locale,
+          localeResolutionCallback: I18n.delegate.resolution(
+            fallback: const Locale("en", "US"),
+          ),
+          title: 'Bloc Super Base',
           theme: state.theme,
           debugShowCheckedModeBanner: false,
           initialRoute: SplashPage.name,
@@ -59,7 +62,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       },
       listenWhen: (previous, current) => current.locale != previous.locale,
       listener: (context, state) {
-        context.setLocale(state.locale);
+        I18n.locale = state.locale;
       },
     );
   }
