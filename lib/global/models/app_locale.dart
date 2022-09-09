@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+
 enum AppLocale {
   auto('auto'),
   enUs('en_US'),
@@ -11,5 +15,17 @@ enum AppLocale {
       (e) => e.value == value,
       orElse: () => auto,
     );
+  }
+
+  Locale toLocale() {
+    switch (this) {
+      case enUs:
+        return const Locale('en', 'US');
+      case viVN:
+        return const Locale('vi', 'VN');
+      default:
+        final codes = Platform.localeName;
+        return Locale(codes.split('_')[0]);
+    }
   }
 }

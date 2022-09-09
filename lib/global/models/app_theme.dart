@@ -1,3 +1,7 @@
+import 'package:bloc_base/global/themes/app_themes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+
 enum AppTheme {
   auto('auto'),
   light('light'),
@@ -11,5 +15,18 @@ enum AppTheme {
       (e) => e.value == value,
       orElse: () => auto,
     );
+  }
+
+  ThemeData toThemeData() {
+    switch (this) {
+      case light:
+        return AppThemes.light();
+      case dark:
+        return AppThemes.dark();
+      case auto:
+        final isDark = SchedulerBinding.instance.window.platformBrightness ==
+            Brightness.dark;
+        return isDark ? AppThemes.dark() : AppThemes.light();
+    }
   }
 }

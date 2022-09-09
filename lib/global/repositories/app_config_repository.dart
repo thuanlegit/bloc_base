@@ -9,6 +9,7 @@ abstract class AppConfigRepository {
   Future<void> saveTheme(AppTheme appTheme);
   AppLocale getLocale();
   Future<void> saveLocale(AppLocale appLocale);
+  Future<int> reset();
 }
 
 class AppConfigRepositoryImpl extends AppConfigRepository {
@@ -42,5 +43,10 @@ class AppConfigRepositoryImpl extends AppConfigRepository {
       Constants.hiveThemeKey,
       appTheme.value,
     );
+  }
+
+  @override
+  Future<int> reset() {
+    return _hiveDataSource.clearConfig();
   }
 }
