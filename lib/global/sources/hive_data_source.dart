@@ -1,67 +1,34 @@
 import 'package:hive/hive.dart';
 
-import '../models/hive/user_data_model.dart';
 import '../utils/constants.dart';
 
 abstract class HiveDataSource {
-  Future<void> saveConfig(String key, dynamic value);
-  T loadConfig<T>(String key);
-  Future<int> clearConfig();
-  Future<void> deleteConfig(String key);
-  Future<void> saveUserData(UserDataModel userData);
-  UserDataModel? loadUserData();
-  Future<int> clearUserData();
+  Future<void> save(String key, dynamic value);
+  T load<T>(String key);
+  Future<int> clear();
+  Future<void> delete(String key);
 }
 
 class HiveDataSourceImpl extends HiveDataSource {
-  final _appConfigBox = Hive.box(Constants.hiveAppConfigBoxName);
-  final _userDataBox = Hive.box(Constants.hiveUserDataBoxName);
+  final _box = Hive.box(Constants.hiveBoxName);
 
   @override
-  Future<void> saveConfig(String key, value) async {
-    return _appConfigBox.put(key, value);
+  Future<void> save(String key, value) async {
+    return _box.put(key, value);
   }
 
   @override
-  T loadConfig<T>(String key) {
-    return _appConfigBox.get(key) as T;
+  T load<T>(String key) {
+    return _box.get(key) as T;
   }
 
   @override
-  Future<int> clearConfig() {
-    return _appConfigBox.clear();
+  Future<int> clear() {
+    return _box.clear();
   }
 
   @override
-  Future<void> deleteConfig(String key) {
-    return _appConfigBox.delete(key);
-  }
-
-  @override
-  Future<void> saveUserData(UserDataModel userData) async {
-    final savedData = loadUserData();
-    if (savedData == null) {
-      await _userDataBox.add(userData);
-    } else {
-      savedData.username = userData.username;
-      savedData.accessToken = userData.accessToken;
-      savedData.refreshToken = userData.refreshToken;
-      await savedData.save();
-    }
-  }
-
-  @override
-  UserDataModel? loadUserData() {
-    try {
-      final savedUserData = _userDataBox.getAt(0) as UserDataModel?;
-      return savedUserData;
-    } catch (_) {
-      return null;
-    }
-  }
-
-  @override
-  Future<int> clearUserData() {
-    return _userDataBox.clear();
+  Future<void> delete(String key) {
+    return _box.delete(key);
   }
 }

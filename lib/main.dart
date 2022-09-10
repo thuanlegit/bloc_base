@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'global/assets/i18n.dart';
-import 'global/blocs/app_config/app_config_bloc.dart';
+import 'global/blocs/app_settings/app_settings_bloc.dart';
 import 'locator.dart';
 import 'modules/login/login.dart';
 import 'modules/settings/settings.dart';
@@ -15,9 +15,9 @@ void main() async {
 
   runApp(
     BlocProvider(
-      create: (context) => AppConfigBloc()
+      create: (context) => AppSettingsBloc()
         ..add(
-          const FetchAppConfigEvent(),
+          const FetchAppSettingsEvent(),
         ),
       child: const MyApp(),
     ),
@@ -34,7 +34,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AppConfigBloc, AppConfigState>(
+    return BlocConsumer<AppSettingsBloc, AppSettingsState>(
       buildWhen: (previous, current) => current != previous,
       builder: (context, state) {
         return MaterialApp(
@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     super.didChangeAppLifecycleState(state);
     switch (state) {
       case AppLifecycleState.resumed:
-        context.read<AppConfigBloc>().add(const FetchAppConfigEvent());
+        context.read<AppSettingsBloc>().add(const FetchAppSettingsEvent());
         break;
       default:
     }

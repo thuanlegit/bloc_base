@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'app_config_bloc.dart';
+part of 'app_settings_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AppConfigEvent {
+mixin _$AppSettingsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
@@ -43,81 +43,81 @@ mixin _$AppConfigEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchAppConfigEvent value) fetch,
-    required TResult Function(UpdateThemeAppConfigEvent value) updateTheme,
-    required TResult Function(UpdateLocaleAppConfigEvent value) updateLocale,
-    required TResult Function(ResetAppConfigEvent value) reset,
+    required TResult Function(FetchAppSettingsEvent value) fetch,
+    required TResult Function(UpdateThemeAppSettingsEvent value) updateTheme,
+    required TResult Function(UpdateLocaleAppSettingsEvent value) updateLocale,
+    required TResult Function(ResetAppSettingsEvent value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppConfigEventCopyWith<$Res> {
-  factory $AppConfigEventCopyWith(
-          AppConfigEvent value, $Res Function(AppConfigEvent) then) =
-      _$AppConfigEventCopyWithImpl<$Res>;
+abstract class $AppSettingsEventCopyWith<$Res> {
+  factory $AppSettingsEventCopyWith(
+          AppSettingsEvent value, $Res Function(AppSettingsEvent) then) =
+      _$AppSettingsEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppConfigEventCopyWithImpl<$Res>
-    implements $AppConfigEventCopyWith<$Res> {
-  _$AppConfigEventCopyWithImpl(this._value, this._then);
+class _$AppSettingsEventCopyWithImpl<$Res>
+    implements $AppSettingsEventCopyWith<$Res> {
+  _$AppSettingsEventCopyWithImpl(this._value, this._then);
 
-  final AppConfigEvent _value;
+  final AppSettingsEvent _value;
   // ignore: unused_field
-  final $Res Function(AppConfigEvent) _then;
+  final $Res Function(AppSettingsEvent) _then;
 }
 
 /// @nodoc
-abstract class _$$FetchAppConfigEventCopyWith<$Res> {
-  factory _$$FetchAppConfigEventCopyWith(_$FetchAppConfigEvent value,
-          $Res Function(_$FetchAppConfigEvent) then) =
-      __$$FetchAppConfigEventCopyWithImpl<$Res>;
+abstract class _$$FetchAppSettingsEventCopyWith<$Res> {
+  factory _$$FetchAppSettingsEventCopyWith(_$FetchAppSettingsEvent value,
+          $Res Function(_$FetchAppSettingsEvent) then) =
+      __$$FetchAppSettingsEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchAppConfigEventCopyWithImpl<$Res>
-    extends _$AppConfigEventCopyWithImpl<$Res>
-    implements _$$FetchAppConfigEventCopyWith<$Res> {
-  __$$FetchAppConfigEventCopyWithImpl(
-      _$FetchAppConfigEvent _value, $Res Function(_$FetchAppConfigEvent) _then)
-      : super(_value, (v) => _then(v as _$FetchAppConfigEvent));
+class __$$FetchAppSettingsEventCopyWithImpl<$Res>
+    extends _$AppSettingsEventCopyWithImpl<$Res>
+    implements _$$FetchAppSettingsEventCopyWith<$Res> {
+  __$$FetchAppSettingsEventCopyWithImpl(_$FetchAppSettingsEvent _value,
+      $Res Function(_$FetchAppSettingsEvent) _then)
+      : super(_value, (v) => _then(v as _$FetchAppSettingsEvent));
 
   @override
-  _$FetchAppConfigEvent get _value => super._value as _$FetchAppConfigEvent;
+  _$FetchAppSettingsEvent get _value => super._value as _$FetchAppSettingsEvent;
 }
 
 /// @nodoc
 
-class _$FetchAppConfigEvent implements FetchAppConfigEvent {
-  const _$FetchAppConfigEvent();
+class _$FetchAppSettingsEvent implements FetchAppSettingsEvent {
+  const _$FetchAppSettingsEvent();
 
   @override
   String toString() {
-    return 'AppConfigEvent.fetch()';
+    return 'AppSettingsEvent.fetch()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchAppConfigEvent);
+        (other.runtimeType == runtimeType && other is _$FetchAppSettingsEvent);
   }
 
   @override
@@ -163,10 +163,10 @@ class _$FetchAppConfigEvent implements FetchAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchAppConfigEvent value) fetch,
-    required TResult Function(UpdateThemeAppConfigEvent value) updateTheme,
-    required TResult Function(UpdateLocaleAppConfigEvent value) updateLocale,
-    required TResult Function(ResetAppConfigEvent value) reset,
+    required TResult Function(FetchAppSettingsEvent value) fetch,
+    required TResult Function(UpdateThemeAppSettingsEvent value) updateTheme,
+    required TResult Function(UpdateLocaleAppSettingsEvent value) updateLocale,
+    required TResult Function(ResetAppSettingsEvent value) reset,
   }) {
     return fetch(this);
   }
@@ -174,10 +174,10 @@ class _$FetchAppConfigEvent implements FetchAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
   }) {
     return fetch?.call(this);
   }
@@ -185,10 +185,10 @@ class _$FetchAppConfigEvent implements FetchAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -198,36 +198,37 @@ class _$FetchAppConfigEvent implements FetchAppConfigEvent {
   }
 }
 
-abstract class FetchAppConfigEvent implements AppConfigEvent {
-  const factory FetchAppConfigEvent() = _$FetchAppConfigEvent;
+abstract class FetchAppSettingsEvent implements AppSettingsEvent {
+  const factory FetchAppSettingsEvent() = _$FetchAppSettingsEvent;
 }
 
 /// @nodoc
-abstract class _$$UpdateThemeAppConfigEventCopyWith<$Res> {
-  factory _$$UpdateThemeAppConfigEventCopyWith(
-          _$UpdateThemeAppConfigEvent value,
-          $Res Function(_$UpdateThemeAppConfigEvent) then) =
-      __$$UpdateThemeAppConfigEventCopyWithImpl<$Res>;
+abstract class _$$UpdateThemeAppSettingsEventCopyWith<$Res> {
+  factory _$$UpdateThemeAppSettingsEventCopyWith(
+          _$UpdateThemeAppSettingsEvent value,
+          $Res Function(_$UpdateThemeAppSettingsEvent) then) =
+      __$$UpdateThemeAppSettingsEventCopyWithImpl<$Res>;
   $Res call({AppTheme theme});
 }
 
 /// @nodoc
-class __$$UpdateThemeAppConfigEventCopyWithImpl<$Res>
-    extends _$AppConfigEventCopyWithImpl<$Res>
-    implements _$$UpdateThemeAppConfigEventCopyWith<$Res> {
-  __$$UpdateThemeAppConfigEventCopyWithImpl(_$UpdateThemeAppConfigEvent _value,
-      $Res Function(_$UpdateThemeAppConfigEvent) _then)
-      : super(_value, (v) => _then(v as _$UpdateThemeAppConfigEvent));
+class __$$UpdateThemeAppSettingsEventCopyWithImpl<$Res>
+    extends _$AppSettingsEventCopyWithImpl<$Res>
+    implements _$$UpdateThemeAppSettingsEventCopyWith<$Res> {
+  __$$UpdateThemeAppSettingsEventCopyWithImpl(
+      _$UpdateThemeAppSettingsEvent _value,
+      $Res Function(_$UpdateThemeAppSettingsEvent) _then)
+      : super(_value, (v) => _then(v as _$UpdateThemeAppSettingsEvent));
 
   @override
-  _$UpdateThemeAppConfigEvent get _value =>
-      super._value as _$UpdateThemeAppConfigEvent;
+  _$UpdateThemeAppSettingsEvent get _value =>
+      super._value as _$UpdateThemeAppSettingsEvent;
 
   @override
   $Res call({
     Object? theme = freezed,
   }) {
-    return _then(_$UpdateThemeAppConfigEvent(
+    return _then(_$UpdateThemeAppSettingsEvent(
       theme: theme == freezed
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
@@ -238,22 +239,22 @@ class __$$UpdateThemeAppConfigEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateThemeAppConfigEvent implements UpdateThemeAppConfigEvent {
-  const _$UpdateThemeAppConfigEvent({required this.theme});
+class _$UpdateThemeAppSettingsEvent implements UpdateThemeAppSettingsEvent {
+  const _$UpdateThemeAppSettingsEvent({required this.theme});
 
   @override
   final AppTheme theme;
 
   @override
   String toString() {
-    return 'AppConfigEvent.updateTheme(theme: $theme)';
+    return 'AppSettingsEvent.updateTheme(theme: $theme)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateThemeAppConfigEvent &&
+            other is _$UpdateThemeAppSettingsEvent &&
             const DeepCollectionEquality().equals(other.theme, theme));
   }
 
@@ -263,9 +264,9 @@ class _$UpdateThemeAppConfigEvent implements UpdateThemeAppConfigEvent {
 
   @JsonKey(ignore: true)
   @override
-  _$$UpdateThemeAppConfigEventCopyWith<_$UpdateThemeAppConfigEvent>
-      get copyWith => __$$UpdateThemeAppConfigEventCopyWithImpl<
-          _$UpdateThemeAppConfigEvent>(this, _$identity);
+  _$$UpdateThemeAppSettingsEventCopyWith<_$UpdateThemeAppSettingsEvent>
+      get copyWith => __$$UpdateThemeAppSettingsEventCopyWithImpl<
+          _$UpdateThemeAppSettingsEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -307,10 +308,10 @@ class _$UpdateThemeAppConfigEvent implements UpdateThemeAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchAppConfigEvent value) fetch,
-    required TResult Function(UpdateThemeAppConfigEvent value) updateTheme,
-    required TResult Function(UpdateLocaleAppConfigEvent value) updateLocale,
-    required TResult Function(ResetAppConfigEvent value) reset,
+    required TResult Function(FetchAppSettingsEvent value) fetch,
+    required TResult Function(UpdateThemeAppSettingsEvent value) updateTheme,
+    required TResult Function(UpdateLocaleAppSettingsEvent value) updateLocale,
+    required TResult Function(ResetAppSettingsEvent value) reset,
   }) {
     return updateTheme(this);
   }
@@ -318,10 +319,10 @@ class _$UpdateThemeAppConfigEvent implements UpdateThemeAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
   }) {
     return updateTheme?.call(this);
   }
@@ -329,10 +330,10 @@ class _$UpdateThemeAppConfigEvent implements UpdateThemeAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
     required TResult orElse(),
   }) {
     if (updateTheme != null) {
@@ -342,43 +343,43 @@ class _$UpdateThemeAppConfigEvent implements UpdateThemeAppConfigEvent {
   }
 }
 
-abstract class UpdateThemeAppConfigEvent implements AppConfigEvent {
-  const factory UpdateThemeAppConfigEvent({required final AppTheme theme}) =
-      _$UpdateThemeAppConfigEvent;
+abstract class UpdateThemeAppSettingsEvent implements AppSettingsEvent {
+  const factory UpdateThemeAppSettingsEvent({required final AppTheme theme}) =
+      _$UpdateThemeAppSettingsEvent;
 
   AppTheme get theme;
   @JsonKey(ignore: true)
-  _$$UpdateThemeAppConfigEventCopyWith<_$UpdateThemeAppConfigEvent>
+  _$$UpdateThemeAppSettingsEventCopyWith<_$UpdateThemeAppSettingsEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateLocaleAppConfigEventCopyWith<$Res> {
-  factory _$$UpdateLocaleAppConfigEventCopyWith(
-          _$UpdateLocaleAppConfigEvent value,
-          $Res Function(_$UpdateLocaleAppConfigEvent) then) =
-      __$$UpdateLocaleAppConfigEventCopyWithImpl<$Res>;
+abstract class _$$UpdateLocaleAppSettingsEventCopyWith<$Res> {
+  factory _$$UpdateLocaleAppSettingsEventCopyWith(
+          _$UpdateLocaleAppSettingsEvent value,
+          $Res Function(_$UpdateLocaleAppSettingsEvent) then) =
+      __$$UpdateLocaleAppSettingsEventCopyWithImpl<$Res>;
   $Res call({AppLocale locale});
 }
 
 /// @nodoc
-class __$$UpdateLocaleAppConfigEventCopyWithImpl<$Res>
-    extends _$AppConfigEventCopyWithImpl<$Res>
-    implements _$$UpdateLocaleAppConfigEventCopyWith<$Res> {
-  __$$UpdateLocaleAppConfigEventCopyWithImpl(
-      _$UpdateLocaleAppConfigEvent _value,
-      $Res Function(_$UpdateLocaleAppConfigEvent) _then)
-      : super(_value, (v) => _then(v as _$UpdateLocaleAppConfigEvent));
+class __$$UpdateLocaleAppSettingsEventCopyWithImpl<$Res>
+    extends _$AppSettingsEventCopyWithImpl<$Res>
+    implements _$$UpdateLocaleAppSettingsEventCopyWith<$Res> {
+  __$$UpdateLocaleAppSettingsEventCopyWithImpl(
+      _$UpdateLocaleAppSettingsEvent _value,
+      $Res Function(_$UpdateLocaleAppSettingsEvent) _then)
+      : super(_value, (v) => _then(v as _$UpdateLocaleAppSettingsEvent));
 
   @override
-  _$UpdateLocaleAppConfigEvent get _value =>
-      super._value as _$UpdateLocaleAppConfigEvent;
+  _$UpdateLocaleAppSettingsEvent get _value =>
+      super._value as _$UpdateLocaleAppSettingsEvent;
 
   @override
   $Res call({
     Object? locale = freezed,
   }) {
-    return _then(_$UpdateLocaleAppConfigEvent(
+    return _then(_$UpdateLocaleAppSettingsEvent(
       locale: locale == freezed
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
@@ -389,22 +390,22 @@ class __$$UpdateLocaleAppConfigEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateLocaleAppConfigEvent implements UpdateLocaleAppConfigEvent {
-  const _$UpdateLocaleAppConfigEvent({required this.locale});
+class _$UpdateLocaleAppSettingsEvent implements UpdateLocaleAppSettingsEvent {
+  const _$UpdateLocaleAppSettingsEvent({required this.locale});
 
   @override
   final AppLocale locale;
 
   @override
   String toString() {
-    return 'AppConfigEvent.updateLocale(locale: $locale)';
+    return 'AppSettingsEvent.updateLocale(locale: $locale)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateLocaleAppConfigEvent &&
+            other is _$UpdateLocaleAppSettingsEvent &&
             const DeepCollectionEquality().equals(other.locale, locale));
   }
 
@@ -414,9 +415,9 @@ class _$UpdateLocaleAppConfigEvent implements UpdateLocaleAppConfigEvent {
 
   @JsonKey(ignore: true)
   @override
-  _$$UpdateLocaleAppConfigEventCopyWith<_$UpdateLocaleAppConfigEvent>
-      get copyWith => __$$UpdateLocaleAppConfigEventCopyWithImpl<
-          _$UpdateLocaleAppConfigEvent>(this, _$identity);
+  _$$UpdateLocaleAppSettingsEventCopyWith<_$UpdateLocaleAppSettingsEvent>
+      get copyWith => __$$UpdateLocaleAppSettingsEventCopyWithImpl<
+          _$UpdateLocaleAppSettingsEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -458,10 +459,10 @@ class _$UpdateLocaleAppConfigEvent implements UpdateLocaleAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchAppConfigEvent value) fetch,
-    required TResult Function(UpdateThemeAppConfigEvent value) updateTheme,
-    required TResult Function(UpdateLocaleAppConfigEvent value) updateLocale,
-    required TResult Function(ResetAppConfigEvent value) reset,
+    required TResult Function(FetchAppSettingsEvent value) fetch,
+    required TResult Function(UpdateThemeAppSettingsEvent value) updateTheme,
+    required TResult Function(UpdateLocaleAppSettingsEvent value) updateLocale,
+    required TResult Function(ResetAppSettingsEvent value) reset,
   }) {
     return updateLocale(this);
   }
@@ -469,10 +470,10 @@ class _$UpdateLocaleAppConfigEvent implements UpdateLocaleAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
   }) {
     return updateLocale?.call(this);
   }
@@ -480,10 +481,10 @@ class _$UpdateLocaleAppConfigEvent implements UpdateLocaleAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
     required TResult orElse(),
   }) {
     if (updateLocale != null) {
@@ -493,49 +494,49 @@ class _$UpdateLocaleAppConfigEvent implements UpdateLocaleAppConfigEvent {
   }
 }
 
-abstract class UpdateLocaleAppConfigEvent implements AppConfigEvent {
-  const factory UpdateLocaleAppConfigEvent({required final AppLocale locale}) =
-      _$UpdateLocaleAppConfigEvent;
+abstract class UpdateLocaleAppSettingsEvent implements AppSettingsEvent {
+  const factory UpdateLocaleAppSettingsEvent(
+      {required final AppLocale locale}) = _$UpdateLocaleAppSettingsEvent;
 
   AppLocale get locale;
   @JsonKey(ignore: true)
-  _$$UpdateLocaleAppConfigEventCopyWith<_$UpdateLocaleAppConfigEvent>
+  _$$UpdateLocaleAppSettingsEventCopyWith<_$UpdateLocaleAppSettingsEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ResetAppConfigEventCopyWith<$Res> {
-  factory _$$ResetAppConfigEventCopyWith(_$ResetAppConfigEvent value,
-          $Res Function(_$ResetAppConfigEvent) then) =
-      __$$ResetAppConfigEventCopyWithImpl<$Res>;
+abstract class _$$ResetAppSettingsEventCopyWith<$Res> {
+  factory _$$ResetAppSettingsEventCopyWith(_$ResetAppSettingsEvent value,
+          $Res Function(_$ResetAppSettingsEvent) then) =
+      __$$ResetAppSettingsEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetAppConfigEventCopyWithImpl<$Res>
-    extends _$AppConfigEventCopyWithImpl<$Res>
-    implements _$$ResetAppConfigEventCopyWith<$Res> {
-  __$$ResetAppConfigEventCopyWithImpl(
-      _$ResetAppConfigEvent _value, $Res Function(_$ResetAppConfigEvent) _then)
-      : super(_value, (v) => _then(v as _$ResetAppConfigEvent));
+class __$$ResetAppSettingsEventCopyWithImpl<$Res>
+    extends _$AppSettingsEventCopyWithImpl<$Res>
+    implements _$$ResetAppSettingsEventCopyWith<$Res> {
+  __$$ResetAppSettingsEventCopyWithImpl(_$ResetAppSettingsEvent _value,
+      $Res Function(_$ResetAppSettingsEvent) _then)
+      : super(_value, (v) => _then(v as _$ResetAppSettingsEvent));
 
   @override
-  _$ResetAppConfigEvent get _value => super._value as _$ResetAppConfigEvent;
+  _$ResetAppSettingsEvent get _value => super._value as _$ResetAppSettingsEvent;
 }
 
 /// @nodoc
 
-class _$ResetAppConfigEvent implements ResetAppConfigEvent {
-  const _$ResetAppConfigEvent();
+class _$ResetAppSettingsEvent implements ResetAppSettingsEvent {
+  const _$ResetAppSettingsEvent();
 
   @override
   String toString() {
-    return 'AppConfigEvent.reset()';
+    return 'AppSettingsEvent.reset()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResetAppConfigEvent);
+        (other.runtimeType == runtimeType && other is _$ResetAppSettingsEvent);
   }
 
   @override
@@ -581,10 +582,10 @@ class _$ResetAppConfigEvent implements ResetAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchAppConfigEvent value) fetch,
-    required TResult Function(UpdateThemeAppConfigEvent value) updateTheme,
-    required TResult Function(UpdateLocaleAppConfigEvent value) updateLocale,
-    required TResult Function(ResetAppConfigEvent value) reset,
+    required TResult Function(FetchAppSettingsEvent value) fetch,
+    required TResult Function(UpdateThemeAppSettingsEvent value) updateTheme,
+    required TResult Function(UpdateLocaleAppSettingsEvent value) updateLocale,
+    required TResult Function(ResetAppSettingsEvent value) reset,
   }) {
     return reset(this);
   }
@@ -592,10 +593,10 @@ class _$ResetAppConfigEvent implements ResetAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
   }) {
     return reset?.call(this);
   }
@@ -603,10 +604,10 @@ class _$ResetAppConfigEvent implements ResetAppConfigEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchAppConfigEvent value)? fetch,
-    TResult Function(UpdateThemeAppConfigEvent value)? updateTheme,
-    TResult Function(UpdateLocaleAppConfigEvent value)? updateLocale,
-    TResult Function(ResetAppConfigEvent value)? reset,
+    TResult Function(FetchAppSettingsEvent value)? fetch,
+    TResult Function(UpdateThemeAppSettingsEvent value)? updateTheme,
+    TResult Function(UpdateLocaleAppSettingsEvent value)? updateLocale,
+    TResult Function(ResetAppSettingsEvent value)? reset,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -616,36 +617,36 @@ class _$ResetAppConfigEvent implements ResetAppConfigEvent {
   }
 }
 
-abstract class ResetAppConfigEvent implements AppConfigEvent {
-  const factory ResetAppConfigEvent() = _$ResetAppConfigEvent;
+abstract class ResetAppSettingsEvent implements AppSettingsEvent {
+  const factory ResetAppSettingsEvent() = _$ResetAppSettingsEvent;
 }
 
 /// @nodoc
-mixin _$AppConfigState {
+mixin _$AppSettingsState {
   ThemeData get theme => throw _privateConstructorUsedError;
   Locale get locale => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AppConfigStateCopyWith<AppConfigState> get copyWith =>
+  $AppSettingsStateCopyWith<AppSettingsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppConfigStateCopyWith<$Res> {
-  factory $AppConfigStateCopyWith(
-          AppConfigState value, $Res Function(AppConfigState) then) =
-      _$AppConfigStateCopyWithImpl<$Res>;
+abstract class $AppSettingsStateCopyWith<$Res> {
+  factory $AppSettingsStateCopyWith(
+          AppSettingsState value, $Res Function(AppSettingsState) then) =
+      _$AppSettingsStateCopyWithImpl<$Res>;
   $Res call({ThemeData theme, Locale locale});
 }
 
 /// @nodoc
-class _$AppConfigStateCopyWithImpl<$Res>
-    implements $AppConfigStateCopyWith<$Res> {
-  _$AppConfigStateCopyWithImpl(this._value, this._then);
+class _$AppSettingsStateCopyWithImpl<$Res>
+    implements $AppSettingsStateCopyWith<$Res> {
+  _$AppSettingsStateCopyWithImpl(this._value, this._then);
 
-  final AppConfigState _value;
+  final AppSettingsState _value;
   // ignore: unused_field
-  final $Res Function(AppConfigState) _then;
+  final $Res Function(AppSettingsState) _then;
 
   @override
   $Res call({
@@ -666,32 +667,32 @@ class _$AppConfigStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_AppConfigStateCopyWith<$Res>
-    implements $AppConfigStateCopyWith<$Res> {
-  factory _$$_AppConfigStateCopyWith(
-          _$_AppConfigState value, $Res Function(_$_AppConfigState) then) =
-      __$$_AppConfigStateCopyWithImpl<$Res>;
+abstract class _$$_AppSettingsStateCopyWith<$Res>
+    implements $AppSettingsStateCopyWith<$Res> {
+  factory _$$_AppSettingsStateCopyWith(
+          _$_AppSettingsState value, $Res Function(_$_AppSettingsState) then) =
+      __$$_AppSettingsStateCopyWithImpl<$Res>;
   @override
   $Res call({ThemeData theme, Locale locale});
 }
 
 /// @nodoc
-class __$$_AppConfigStateCopyWithImpl<$Res>
-    extends _$AppConfigStateCopyWithImpl<$Res>
-    implements _$$_AppConfigStateCopyWith<$Res> {
-  __$$_AppConfigStateCopyWithImpl(
-      _$_AppConfigState _value, $Res Function(_$_AppConfigState) _then)
-      : super(_value, (v) => _then(v as _$_AppConfigState));
+class __$$_AppSettingsStateCopyWithImpl<$Res>
+    extends _$AppSettingsStateCopyWithImpl<$Res>
+    implements _$$_AppSettingsStateCopyWith<$Res> {
+  __$$_AppSettingsStateCopyWithImpl(
+      _$_AppSettingsState _value, $Res Function(_$_AppSettingsState) _then)
+      : super(_value, (v) => _then(v as _$_AppSettingsState));
 
   @override
-  _$_AppConfigState get _value => super._value as _$_AppConfigState;
+  _$_AppSettingsState get _value => super._value as _$_AppSettingsState;
 
   @override
   $Res call({
     Object? theme = freezed,
     Object? locale = freezed,
   }) {
-    return _then(_$_AppConfigState(
+    return _then(_$_AppSettingsState(
       theme: theme == freezed
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
@@ -706,8 +707,8 @@ class __$$_AppConfigStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppConfigState implements _AppConfigState {
-  const _$_AppConfigState({required this.theme, required this.locale});
+class _$_AppSettingsState implements _AppSettingsState {
+  const _$_AppSettingsState({required this.theme, required this.locale});
 
   @override
   final ThemeData theme;
@@ -716,14 +717,14 @@ class _$_AppConfigState implements _AppConfigState {
 
   @override
   String toString() {
-    return 'AppConfigState(theme: $theme, locale: $locale)';
+    return 'AppSettingsState(theme: $theme, locale: $locale)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppConfigState &&
+            other is _$_AppSettingsState &&
             const DeepCollectionEquality().equals(other.theme, theme) &&
             const DeepCollectionEquality().equals(other.locale, locale));
   }
@@ -736,14 +737,14 @@ class _$_AppConfigState implements _AppConfigState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_AppConfigStateCopyWith<_$_AppConfigState> get copyWith =>
-      __$$_AppConfigStateCopyWithImpl<_$_AppConfigState>(this, _$identity);
+  _$$_AppSettingsStateCopyWith<_$_AppSettingsState> get copyWith =>
+      __$$_AppSettingsStateCopyWithImpl<_$_AppSettingsState>(this, _$identity);
 }
 
-abstract class _AppConfigState implements AppConfigState {
-  const factory _AppConfigState(
+abstract class _AppSettingsState implements AppSettingsState {
+  const factory _AppSettingsState(
       {required final ThemeData theme,
-      required final Locale locale}) = _$_AppConfigState;
+      required final Locale locale}) = _$_AppSettingsState;
 
   @override
   ThemeData get theme;
@@ -751,6 +752,6 @@ abstract class _AppConfigState implements AppConfigState {
   Locale get locale;
   @override
   @JsonKey(ignore: true)
-  _$$_AppConfigStateCopyWith<_$_AppConfigState> get copyWith =>
+  _$$_AppSettingsStateCopyWith<_$_AppSettingsState> get copyWith =>
       throw _privateConstructorUsedError;
 }

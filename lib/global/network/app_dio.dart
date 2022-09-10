@@ -27,7 +27,7 @@ class AppDioImpl extends AppDio {
         receiveDataWhenStatusError: true,
         headers: <String, String>{
           'Authorization':
-              'Bearer ${_hiveRepository.getSavedUserData()?.accessToken}',
+              'Bearer ${_hiveRepository.getUserData()?.accessToken}',
           'Content-Type': 'application/json'
         },
       ),
