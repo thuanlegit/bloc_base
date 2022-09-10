@@ -14,7 +14,7 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appConfigBloc = context.read<AppSettingsBloc>();
+    final appSettingsBloc = context.read<AppSettingsBloc>();
     return Scaffold(
       body: Scaffold(
         body: Center(
@@ -22,35 +22,35 @@ class SettingsView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                I18n.of(context)!.greeting('Thuan'),
+                I18n.of(context)!.greeting('- Loki'),
               ),
               ElevatedButton(
-                onPressed: () => appConfigBloc.add(
+                onPressed: () => appSettingsBloc.add(
                     const UpdateThemeAppSettingsEvent(theme: AppTheme.light)),
                 child: const Text('Light Theme'),
               ),
               ElevatedButton(
-                onPressed: () => appConfigBloc.add(
+                onPressed: () => appSettingsBloc.add(
                     const UpdateThemeAppSettingsEvent(theme: AppTheme.dark)),
                 child: const Text('Dark Theme'),
               ),
               ElevatedButton(
-                onPressed: () => appConfigBloc.add(
+                onPressed: () => appSettingsBloc.add(
                     const UpdateThemeAppSettingsEvent(theme: AppTheme.auto)),
                 child: const Text('System Theme'),
               ),
               ElevatedButton(
-                onPressed: () => appConfigBloc.add(
+                onPressed: () => appSettingsBloc.add(
                     const UpdateLocaleAppSettingsEvent(locale: AppLocale.enUs)),
                 child: const Text('English'),
               ),
               ElevatedButton(
-                onPressed: () => appConfigBloc.add(
+                onPressed: () => appSettingsBloc.add(
                     const UpdateLocaleAppSettingsEvent(locale: AppLocale.viVN)),
                 child: const Text('Vietnamese'),
               ),
               ElevatedButton(
-                onPressed: () => appConfigBloc.add(
+                onPressed: () => appSettingsBloc.add(
                     const UpdateLocaleAppSettingsEvent(locale: AppLocale.auto)),
                 child: const Text('System Language'),
               ),

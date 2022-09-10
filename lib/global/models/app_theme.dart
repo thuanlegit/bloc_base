@@ -1,6 +1,7 @@
-import 'package:bloc_base/global/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+
+import '../themes/app_themes.dart';
 
 enum AppTheme {
   auto('auto'),

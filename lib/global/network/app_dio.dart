@@ -3,8 +3,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-import '../../locator.dart';
-import '../repositories/hive_repository.dart';
 import '../utils/constants.dart';
 import 'dio_adapter_mock.dart';
 
@@ -15,7 +13,8 @@ abstract class AppDio {
 }
 
 class AppDioImpl extends AppDio {
-  final _hiveRepository = locator.get<HiveRepository>();
+  // TODO: load token from storage
+  // final _hiveRepository = locator.get<HiveRepository>();
 
   AppDioImpl() {
     dio = Dio(
@@ -26,8 +25,7 @@ class AppDioImpl extends AppDio {
         followRedirects: false,
         receiveDataWhenStatusError: true,
         headers: <String, String>{
-          'Authorization':
-              'Bearer ${_hiveRepository.getUserData()?.accessToken}',
+          'Authorization': 'Bearer [YOUR_TOKEN]',
           'Content-Type': 'application/json'
         },
       ),

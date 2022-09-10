@@ -5,7 +5,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../global/assets/assets.gen.dart';
 import '../../../global/assets/i18n.dart';
-import '../../login/login.dart';
+import '../../settings/settings.dart';
 import '../splash.dart';
 
 class SplashView extends StatelessWidget {
@@ -33,7 +33,7 @@ class SplashView extends StatelessWidget {
           );
         } else if (state.status == LoadSplashStatus.loaded) {
           Navigator.of(context).pushNamedAndRemoveUntil(
-            LoginPage.name,
+            SettingsPage.name,
             (route) => false,
           );
         }

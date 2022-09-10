@@ -4,8 +4,6 @@ import 'package:path_provider/path_provider.dart';
 
 import 'global/network/app_dio.dart';
 import 'global/repositories/hive_repository.dart';
-import 'global/repositories/auth_repository.dart';
-import 'global/sources/auth_data_source.dart';
 import 'global/sources/hive_data_source.dart';
 import 'global/utils/constants.dart';
 
@@ -18,8 +16,6 @@ Future<void> setupLocator() async {
 
   locator.registerLazySingleton<HiveDataSource>(() => HiveDataSourceImpl());
   locator.registerLazySingleton<AppDio>(() => AppDioImpl());
-  locator.registerLazySingleton<AuthDataSource>(() => AuthDataSourceImpl());
 
   locator.registerLazySingleton<HiveRepository>(() => HiveRepositoryImpl());
-  locator.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl());
 }

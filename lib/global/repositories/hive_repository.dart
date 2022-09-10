@@ -4,7 +4,6 @@ import '../../locator.dart';
 import '../models/app_locale.dart';
 import '../models/app_theme.dart';
 import '../models/hive/app_settings.dart';
-import '../models/hive/user_data.dart';
 import '../sources/hive_data_source.dart';
 import '../utils/constants.dart';
 
@@ -13,7 +12,6 @@ abstract class HiveRepository {
   Future<void> saveTheme(AppTheme appTheme);
   Future<void> saveLocale(AppLocale appLocale);
   Future<AppSettings> resetAppSettings();
-  UserData? getUserData();
 }
 
 class HiveRepositoryImpl extends HiveRepository {
@@ -59,15 +57,5 @@ class HiveRepositoryImpl extends HiveRepository {
       jsonEncode(defaultData.toJson),
     );
     return defaultData;
-  }
-
-  @override
-  UserData? getUserData() {
-    final savedUserData =
-        _hiveDataSource.load<String?>(Constants.hiveUserDataKey);
-    if (savedUserData != null) {
-      return UserData.fromJson(jsonDecode(savedUserData));
-    }
-    return null;
   }
 }

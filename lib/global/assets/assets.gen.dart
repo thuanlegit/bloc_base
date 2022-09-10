@@ -12,31 +12,15 @@ import 'package:flutter/widgets.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/Lato-Bold.ttf
-  String get latoBold => 'assets/fonts/Lato-Bold.ttf';
-
-  /// File path: assets/fonts/Lato-BoldItalic.ttf
-  String get latoBoldItalic => 'assets/fonts/Lato-BoldItalic.ttf';
-
-  /// File path: assets/fonts/Lato-Italic.ttf
-  String get latoItalic => 'assets/fonts/Lato-Italic.ttf';
-
-  /// File path: assets/fonts/Lato-Light.ttf
-  String get latoLight => 'assets/fonts/Lato-Light.ttf';
-
-  /// File path: assets/fonts/Lato-LightItalic.ttf
-  String get latoLightItalic => 'assets/fonts/Lato-LightItalic.ttf';
-
-  /// File path: assets/fonts/Lato-Regular.ttf
-  String get latoRegular => 'assets/fonts/Lato-Regular.ttf';
+  /// File path: assets/fonts/.gitkeep
+  String get gitkeep => 'assets/fonts/.gitkeep';
 }
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/settings.png
-  AssetGenImage get settings =>
-      const AssetGenImage('assets/icons/settings.png');
+  /// File path: assets/icons/.gitkeep
+  String get gitkeep => 'assets/icons/.gitkeep';
 }
 
 class $AssetsImagesGen {

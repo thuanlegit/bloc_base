@@ -5,7 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'global/assets/i18n.dart';
 import 'global/blocs/app_settings/app_settings_bloc.dart';
 import 'locator.dart';
-import 'modules/login/login.dart';
 import 'modules/settings/settings.dart';
 import 'modules/splash/splash.dart';
 
@@ -56,7 +55,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           routes: {
             SplashPage.name: (context) => const SplashPage(),
             SettingsPage.name: (context) => const SettingsPage(),
-            LoginPage.name: (context) => const LoginPage(),
           },
         );
       },
