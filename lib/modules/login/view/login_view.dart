@@ -21,26 +21,16 @@ class LoginView extends StatelessWidget {
     final bloc = context.read<LoginBloc>();
     return BlocConsumer<LoginBloc, LoginState>(
       listenWhen: (previous, current) =>
-          current.status == LoadLoginStatus.error ||
           current.status == LoadLoginStatus.loaded,
       listener: (context, state) {
-        if (state.status == LoadLoginStatus.error) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              behavior: SnackBarBehavior.floating,
-              content: Text(
-                'Login failed. Please try again!',
-              ),
-            ),
-          );
-        } else if (state.status == LoadLoginStatus.loaded) {
+        if (state.status == LoadLoginStatus.loaded) {
           Navigator.of(context).pushNamedAndRemoveUntil(
             SettingsPage.name,
             (route) => false,
           );
         }
       },
-      buildWhen: (previous, current) => current.status != previous.status,
+      buildWhen: (previous, current) => current != previous,
       builder: (context, state) {
         return Scaffold(
           body: Center(

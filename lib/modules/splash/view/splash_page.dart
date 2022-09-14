@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../global/blocs/exception_handler/exception_handler_bloc.dart';
 import '../splash.dart';
 import 'splash_view.dart';
 
@@ -12,7 +13,9 @@ class SplashPage extends StatelessWidget {
     return MaterialPageRoute(
       builder: (ctx) {
         return BlocProvider(
-          create: (context) => SplashBloc(),
+          create: (context) => SplashBloc(
+            exceptionHandlerBloc: context.read<ExceptionHandlerBloc>(),
+          ),
           child: const SplashView(),
         );
       },
@@ -26,8 +29,9 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SplashBloc()
-        ..add(
+      create: (context) => SplashBloc(
+        exceptionHandlerBloc: context.read<ExceptionHandlerBloc>(),
+      )..add(
           const FetchSplashEvent(),
         ),
       child: const SplashView(),

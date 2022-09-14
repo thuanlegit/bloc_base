@@ -18,20 +18,9 @@ class SplashView extends StatelessWidget {
     final bloc = context.read<SplashBloc>();
     return BlocConsumer<SplashBloc, SplashState>(
       bloc: bloc,
-      listenWhen: (previous, current) =>
-          current.status == LoadSplashStatus.error ||
-          current.status == LoadSplashStatus.loaded,
+      listenWhen: (previous, current) => current.status != previous.status,
       listener: (context, state) {
-        if (state.status == LoadSplashStatus.error) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              behavior: SnackBarBehavior.floating,
-              content: Text(
-                'Could not load startup data. Please restart the app and try again!',
-              ),
-            ),
-          );
-        } else if (state.status == LoadSplashStatus.loaded) {
+        if (state.status == LoadSplashStatus.loaded) {
           Navigator.of(context).pushNamedAndRemoveUntil(
             LoginPage.name,
             (route) => false,
