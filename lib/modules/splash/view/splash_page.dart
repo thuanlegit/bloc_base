@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
     return MaterialPageRoute(
       builder: (ctx) {
         return BlocProvider(
-          create: (context) => SplashBloc(),
+          create: (context) => SplashBloc(exceptionHandlerBloc: context.read()),
           child: const SplashView(),
         );
       },
@@ -26,7 +26,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SplashBloc()
+      create: (context) => SplashBloc(exceptionHandlerBloc: context.read())
         ..add(
           const FetchSplashEvent(),
         ),

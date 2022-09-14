@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'global/assets/i18n.dart';
 import 'global/blocs/app_settings/app_settings_bloc.dart';
+import 'global/blocs/exception_handler/exception_handler_bloc.dart';
 import 'locator.dart';
 import 'modules/settings/settings.dart';
 import 'modules/splash/splash.dart';
@@ -13,11 +14,16 @@ void main() async {
   await setupLocator();
 
   runApp(
-    BlocProvider(
-      create: (context) => AppSettingsBloc()
-        ..add(
-          const FetchAppSettingsEvent(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AppSettingsBloc()
+            ..add(
+              const FetchAppSettingsEvent(),
+            ),
         ),
+        BlocProvider(create: (context) => ExceptionHandlerBloc()),
+      ],
       child: const MyApp(),
     ),
   );
@@ -52,6 +58,33 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           theme: state.theme,
           debugShowCheckedModeBanner: false,
           initialRoute: SplashPage.name,
+          builder: (context, child) =>
+              BlocListener<ExceptionHandlerBloc, ExceptionHandlerState>(
+            listenWhen: (previous, current) =>
+                current.exception != previous.exception,
+            listener: (context, state) {
+              if (state.exception != null) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    behavior: SnackBarBehavior.floating,
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          state.exception!.title,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(state.exception!.content),
+                      ],
+                    ),
+                  ),
+                );
+              }
+            },
+            child: child,
+          ),
           routes: {
             SplashPage.name: (context) => const SplashPage(),
             SettingsPage.name: (context) => const SettingsPage(),
