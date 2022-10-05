@@ -1,4 +1,4 @@
-import 'package:bloc_base/global/blocs/exception_handler/exception_handler_bloc.dart';
+import 'package:bloc_base/global/blocs/super/super_bloc.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
       builder: (ctx) {
         return BlocProvider(
           create: (context) => LoginBloc(
-            exceptionHandlerBloc: context.read<ExceptionHandlerBloc>(),
+            superBloc: context.read<SuperBloc>(),
           ),
           child: const LoginView(),
         );
@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LoginBloc(
-        exceptionHandlerBloc: context.read<ExceptionHandlerBloc>(),
+        superBloc: context.read<SuperBloc>(),
       ),
       child: const LoginView(),
     );
