@@ -30,6 +30,7 @@ dependencies:
   flutter_svg: ^1.0.3
   flutter_localizations:
     sdk: flutter
+  overlay_support: ^2.0.1
 
 dev_dependencies:
   flutter_test:

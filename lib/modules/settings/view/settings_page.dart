@@ -12,8 +12,7 @@ class SettingsPage extends StatelessWidget {
     return MaterialPageRoute(
       builder: (ctx) {
         return BlocProvider(
-          create: (context) =>
-              SettingsBloc(exceptionHandlerBloc: context.read()),
+          create: (context) => SettingsBloc(superBloc: context.read()),
           child: const SettingsView(),
         );
       },
@@ -27,7 +26,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SettingsBloc(exceptionHandlerBloc: context.read()),
+      create: (context) => SettingsBloc(superBloc: context.read()),
       child: const SettingsView(),
     );
   }
